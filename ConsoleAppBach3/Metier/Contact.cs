@@ -13,9 +13,14 @@ namespace ConsoleAppBach3.Metier
     /// Class qui représente Contact
     /// </summary>
     /// <seealso cref="IComparable{T}"/>
-    class Contact : IComparable<Contact>
+    [Table("Contact")]
+    public class Contact : IComparable<Contact>
     {
         private const char SEPARATEUR = ';';
+
+        [Column("ID")]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.IDENTITY)]
 
         private string nom;
         /// <summary>
